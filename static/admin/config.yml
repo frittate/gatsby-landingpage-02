@@ -1,0 +1,14 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+
+media_folder: static/assets
+
+collections:
+  - name: 'header'
+    label: Header
+    folder: '_content/pages'
+    create: false
+    slug: '{page}-{slug}'
+    fields:
+      - { name: title, label: Title }

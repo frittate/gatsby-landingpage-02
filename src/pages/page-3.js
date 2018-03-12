@@ -21,7 +21,6 @@ query MarkdownQuery {
         id
         frontmatter {
           title
-          date(formatString: "DD MMMM, YYYY")
         }
         excerpt
       }

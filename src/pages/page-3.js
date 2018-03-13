@@ -5,7 +5,7 @@ export const ThirdPage = ({ data }) => {
   console.log(data);
   return (
     <div>
-    <h1>{data.allMarkdownRemark.edges[0].node.frontmatter.title}</h1>
+    <h1>{data.allMarkdownRemark.edges[0].node.headings[0].value}</h1>
     <p>Welcome to page 3</p>
     <Link to="/">Go back to the homepage</Link>
   </div>
@@ -13,16 +13,13 @@ export const ThirdPage = ({ data }) => {
 }
 
 export const query = graphql`
-query MarkdownQuery {
-  allMarkdownRemark {
-    totalCount
+query h1Query {
+  allMarkdownRemark(filter: {headings: {depth: {eq: 1}}}) {
     edges {
       node {
-        id
-        frontmatter {
-          title
+        headings (depth:h1){
+          value
         }
-        excerpt
       }
     }
   }

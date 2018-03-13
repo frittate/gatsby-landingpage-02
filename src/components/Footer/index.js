@@ -23,7 +23,7 @@ const Footer = () => (
             textDecoration: 'none',
           }}
         >
-          Gatsby stays the same on all pages
+          I'm a footer
         </Link>
       </h1>
     </div>
